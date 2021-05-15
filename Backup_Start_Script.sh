@@ -16,7 +16,7 @@ fi
 
 for ((i=0; i < 2; i++))
 do 
-    for ((j=30; j <= 38; j++))
+    for ((j=1; j <= 255; j++))
     do
 	expect getattr_on_remote_PC.exp $netw $i $j
 	expect backup_from_pc.exp $netw $i $j
