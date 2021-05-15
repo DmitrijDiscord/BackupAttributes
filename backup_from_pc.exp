@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+
+	set first [lindex $argv 0]
+	set second [lindex $argv 1]
+        spawn rsync -avzhr administrator@172.16.$first.$second:/home/administrator/Documents /home/dmitrij/Backups/
+        set pass "master"
+        expect {
+        password: {send "$pass\r"; exp_continue}
+                  }

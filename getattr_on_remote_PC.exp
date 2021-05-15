@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+
+    set first [lindex $argv 0]
+    set second [lindex $argv 1]
+    spawn ./to_remote_pc.sh $first $second
+    set pass "master"
+    expect {
+	password: {send "$pass\r"; exp_continue}
+	    }
