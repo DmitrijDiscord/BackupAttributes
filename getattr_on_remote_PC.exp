@@ -8,7 +8,5 @@
     set answ "yes"
     expect {
 	connecting {send "$answ\r"; exp_continue}
-	    }
-    expect {
 	password: {send "$pass\r"; exp_continue}
 	    }
