@@ -3,7 +3,8 @@
 
 	set first [lindex $argv 0]
 	set second [lindex $argv 1]
-        spawn rsync -avzhr administrator@10.101.$first.$second:/home/administrator/Documents /home/dmitrij/Backups/
+	set third [lindex $argv 2]
+        spawn rsync -avzhr administrator@10.$first.$second.$third:/home/administrator/Documents /home/dmitrij/Backups/
         set pass "master"
         expect {
         password: {send "$pass\r"; exp_continue}

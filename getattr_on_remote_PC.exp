@@ -2,8 +2,13 @@
 
     set first [lindex $argv 0]
     set second [lindex $argv 1]
-    spawn ./to_remote_pc.sh $first $second
+    set third [lindex $argv 2]
+    spawn ./to_remote_pc.sh $first $second $third
     set pass "master"
+    set answ "yes"
+    expect {
+	connecting {send "$answ\r"; exp_continue}
+	    }
     expect {
 	password: {send "$pass\r"; exp_continue}
 	    }
