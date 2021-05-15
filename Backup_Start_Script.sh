@@ -6,12 +6,16 @@ echo "Bogutskogo"
 echo "DNT"
 read loc
 
+
 if [[ $loc = Mostovaya ]]; then
     netw=104
 elif [[ $loc = Bogutskogo ]]; then
     netw=101
-else
+elif [[ $loc = DNT ]]; then
     netw=103
+else
+    echo "Wrong location! Exiting!"
+    exit 1
 fi
 
 for ((i=0; i < 2; i++))
